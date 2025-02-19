@@ -1,5 +1,14 @@
 BITS 16
 [org 0x7C00]
 
+TEST_PRINT:
+    MOV AH, 0x00
+    INT 0x16
+
+    MOV AH, 0x0E
+    INT 0x10
+
+    JMP TEST_PRINT
+    
 TIMES 510-($-$$) DB 0
 DW 0xAA55
